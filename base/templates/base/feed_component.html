@@ -2,12 +2,19 @@
 
 <div class="roomListRoom">
   <div class="roomListRoom__header">
+    {% if room.host %}
     <a href="{% url 'user-profile' room.host.id %}" class="roomListRoom__author">
       <div class="avatar avatar--small">
         <img src="{{room.host.avatar.url}}" />
       </div>
       <span>@{{room.host.username}}</span>
     </a>
+    {% else %}
+    <span class="roomListRoom__author">
+      <div class="avatar avatar--small"></div>
+      <span>Unknown host</span>
+    </span>
+    {% endif %}
     <div class="roomListRoom__actions">
       <span>{{room.created|timesince}} days ago</span>
     </div>

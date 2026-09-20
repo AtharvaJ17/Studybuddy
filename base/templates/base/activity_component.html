@@ -9,7 +9,7 @@
     <div class="activities__boxHeader roomListRoom__header">
       <a href="{% url 'user-profile' message.user.id %}" class="roomListRoom__author">
         <div class="avatar avatar--small">
-          <img src="{{message.user.avatar.all}}" />
+          <img src="{{message.user.avatar.url}}" />
         </div>
         <p>
           {{message.user}}
@@ -40,7 +40,7 @@
     <div class="activities__boxContent">
       <p>
         replied to post “
-        <a href="{% url 'room' message.id %}">{{message.room}}</a>
+        <a href="{% url 'room' message.room.id %}">{{message.room}}</a>
         ”
       </p>
       <div class="activities__boxRoomContent">
