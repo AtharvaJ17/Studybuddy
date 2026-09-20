@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [h.strip() for h in os.environ.get('ALLOWED_HOSTS', '').split(',') if h.strip()]
 
@@ -135,12 +135,10 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT= BASE_DIR / 'static/images'
 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-
-
