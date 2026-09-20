@@ -1,0 +1,40 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Static & media (collected/uploaded at runtime — don't commit)
+staticfiles/
+static/images/*
+!static/images/.gitkeep
+
+# Migrations (optional — many teams DO commit these; remove this line if so)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
